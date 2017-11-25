@@ -13,7 +13,7 @@ public class Deplacement : MonoBehaviour {
 	void Start () {
 		
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		inputX = Input.GetAxisRaw ("Horizontal");
@@ -34,4 +34,5 @@ public class Deplacement : MonoBehaviour {
 
 		}
 	}
+
 }
