@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33769472001007276}
   - component: {fileID: 65279496618214750}
   - component: {fileID: 23141768523431714}
-  - component: {fileID: 114372760528657804}
+  - component: {fileID: 114246330953549716}
   m_Layer: 0
   m_Name: ItemStand
   m_TagString: Untagged
@@ -96,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114372760528657804
+--- !u!114 &114246330953549716
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -108,6 +108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _item_type: 0
-  _price: 10
-  _stock: 15
-  _description: FOOOD  God dammit
+  _price: 0
+  _stock: 0
+  _description: 
