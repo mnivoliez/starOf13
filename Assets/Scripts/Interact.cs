@@ -22,37 +22,21 @@ public class Interact : MonoBehaviour {
 				interaction.isTrigger = true;
 
 				switch (GetComponent<MDirection> ().Get ()) {
-				case 1:
+				case Direction.TOP:
 					interaction.size = new Vector2 (charSize.x, 0.1f);
 					interaction.offset = new Vector2 (0, charSize.y);
 					break;
-				case 2:
-					interaction.size = new Vector2 (0.1f, 0.1f);
-					interaction.offset = new Vector2 (charSize.x, charSize.y);
-					break;
-				case 3:
+				case Direction.RIGHT:
 					interaction.size = new Vector2 (0.1f, charSize.y);
 					interaction.offset = new Vector2 (charSize.x, 0);
 					break;
-				case 4:
-					interaction.size = new Vector2 (0.1f, 0.1f);
-					interaction.offset = new Vector2 (charSize.x, -charSize.y);
-					break;
-				case 5:
+				case Direction.BOTTOM:
 					interaction.size = new Vector2 (charSize.y, 0.1f);
 					interaction.offset = new Vector2 (0, -charSize.y);
 					break;
-				case 6:
-					interaction.size = new Vector2 (0.1f, 0.1f);
-					interaction.offset = new Vector2 (-charSize.x, -charSize.y);
-					break;
-				case 7:
+				case Direction.LEFT:
 					interaction.size = new Vector2 (0.1f, charSize.y);
 					interaction.offset = new Vector2 (-charSize.x, 0);
-					break;
-				case 8:
-					interaction.size = new Vector2 (0.1f, 0.1f);
-					interaction.offset = new Vector2 (-charSize.x, charSize.y);
 					break;
 				default:
 					break;

@@ -11,11 +11,11 @@ public enum Direction {
 
 public class MDirection : MonoBehaviour {
 
-	private int direction;
+	private Direction direction;
 
 	// Use this for initialization
 	void Start () {
-		direction = 1;
+		direction = Direction.BOTTOM;
 	}
 	
 	// Update is called once per frame
@@ -23,11 +23,11 @@ public class MDirection : MonoBehaviour {
 		
 	}
 
-	public void Set (int dir) {
+	public void Set (Direction dir) {
 		direction = dir;
 	}
 
-	public int Get () {
+	public Direction Get () {
 		return direction;
 	}
 }
