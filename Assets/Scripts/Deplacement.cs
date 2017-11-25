@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Deplacement : MonoBehaviour {
 
-    float speed = 0.1f;
+     [SerializeField] private float speed = 0.1f;
 
 	// Use this for initialization
 	void Start () {
