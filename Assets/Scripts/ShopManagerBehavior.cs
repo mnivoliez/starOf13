@@ -37,6 +37,7 @@ public class ShopManagerBehavior : MonoBehaviour {
 	private void GenerateStands () {
 		foreach (ItemBase ib in _base_items) {
 			ShopItemStandBehavior sis = Instantiate (_itemStandPrefab, Vector3.forward, Quaternion.identity);
+			sis.Init (ib.item_type, ib.base_price, ib.stock, ib.name, ib.description);
 			_stands.Add (sis);
 		}
 	}

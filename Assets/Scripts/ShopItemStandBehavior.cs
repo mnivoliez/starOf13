@@ -9,10 +9,11 @@ public enum ItemType {
 
 [System.Serializable]
 public class ItemBase {
-	public ItemType _item_type;
-	public int _base_price;
-	public string _description;
-	public string _name;
+	public ItemType item_type;
+	public int base_price;
+	public int stock;
+	public string description;
+	public string name;
 }
 
 /**
@@ -24,6 +25,7 @@ public class ShopItemStandBehavior : MonoBehaviour, IInteractable {
 	[SerializeField] private int _price;
 	[SerializeField] private int _stock;
 	[SerializeField] private string _description;
+	[SerializeField] private string _name;
 
 	// Use this for initialization
 	void Start () {
@@ -53,6 +55,14 @@ public class ShopItemStandBehavior : MonoBehaviour, IInteractable {
 
 	public void TakeOne () {
 		_stock--;
+	}
+
+	public void Init (ItemType it, int price, int stock, string name, string description) {
+		_item_type = it;
+		_price = price;
+		_stock = stock;
+		_name = name;
+		_description = description;
 	}
 
 	public void Interact (GameObject go) {
