@@ -58,4 +58,5 @@ public class Interact : MonoBehaviour {
 			interacting = false;
 		}
 	}
+
 }
