@@ -21,47 +21,16 @@ public class Deplacement : MonoBehaviour {
 		mvt = new Vector2 (speed * inputX, speed * inputY);
 	}
 
-<<<<<<< HEAD
 	void FixedUpdate () {
 		GetComponent<Rigidbody2D> ().velocity = mvt;
 		if (inputX == 0 && inputY > 0) {
-			GetComponent<MDirection> ().Set (1);
-		} else if (inputX > 0 && inputY > 0) {
-			GetComponent<MDirection> ().Set (2);
+			GetComponent<MDirection> ().Set (Direction.TOP);
 		} else if (inputX > 0 && inputY == 0) {
-			GetComponent<MDirection> ().Set (3);
-		} else if (inputX > 0 && inputY < 0) {
-			GetComponent<MDirection> ().Set (4);
+			GetComponent<MDirection> ().Set (Direction.RIGHT);
 		} else if (inputX == 0 && inputY < 0) {
-			GetComponent<MDirection> ().Set (5);
-		} else if (inputX < 0 && inputY < 0) {
-			GetComponent<MDirection> ().Set (6);
+			GetComponent<MDirection> ().Set (Direction.BOTTOM);
 		} else if (inputX < 0 && inputY == 0) {
-			GetComponent<MDirection> ().Set (7);
-		} else if (inputX < 0 && inputY > 0) {
-			GetComponent<MDirection> ().Set (8);
+			GetComponent<MDirection> ().Set (Direction.LEFT);
 		}
 	}
-=======
-    void FixedUpdate()
-    {
-        GetComponent<Rigidbody2D>().velocity = mvt;
-        if (inputX == 0 && inputY > 0)
-        {
-            GetComponent<MDirection>().Set(Direction.TOP);
-        }
-        else if (inputX > 0 && inputY == 0)
-        {
-            GetComponent<MDirection>().Set(Direction.RIGHT);
-        }
-        else if (inputX == 0 && inputY < 0)
-        {
-            GetComponent<MDirection>().Set(Direction.BOTTOM);
-        }
-        else if (inputX < 0 && inputY == 0)
-        {
-            GetComponent<MDirection>().Set(Direction.LEFT);
-        }
-    }
->>>>>>> corrections suite au nouveau système de direction
 }
