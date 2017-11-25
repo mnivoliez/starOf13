@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
         {
             if (curHealth > maxHealth)
             {
-                curHealth = maxHealth;
+                curHealth = maxHealth; 
             }
             if (curHealth <= 0)
             {
