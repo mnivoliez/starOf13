@@ -5,7 +5,7 @@ using UnityEngine;
 /**
  * The goal here is to propose a manager which generate item stand on the go at the "opening" of the store.
  **/
-public class ShopManagerBehavior : MonoBehaviour {
+public class ShopManagerBehavior : MonoBehaviour, IIPhaseDriven {
 	[SerializeField] private ShopItemStandBehavior _itemStandPrefab;
 	[SerializeField] private bool _is_open;
 	[SerializeField] private List<ItemBase> _base_items;
@@ -22,12 +22,12 @@ public class ShopManagerBehavior : MonoBehaviour {
 		
 	}
 
-	public void OpenShop () {
+	private void OpenShop () {
 		GenerateStands ();
 		_is_open = true;
 	}
 
-	public void CloseShop () {
+	private void CloseShop () {
 		foreach (ShopItemStandBehavior stand in _stands) {
 			Destroy (stand);
 		}
@@ -39,6 +39,17 @@ public class ShopManagerBehavior : MonoBehaviour {
 			ShopItemStandBehavior sis = Instantiate (_itemStandPrefab, Vector3.forward, Quaternion.identity);
 			sis.Init (ib.item_type, ib.base_price, ib.stock, ib.name, ib.description, ib.sprite);
 			_stands.Add (sis);
+		}
+	}
+
+	public void EnterPhase (Phase phase) {
+		switch (phase) {
+		case Phase.BISOUNOURS:
+			OpenShop ();
+			break;
+		case Phase.FRIDAY_13:
+			CloseShop ();
+			break;
 		}
 	}
 }
