@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Taper : MonoBehaviour {
+public class Taper : MonoBehaviour
+{
 
     bool hitting = false;
     BoxCollider2D hit = null;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         if (!hitting)
         {
             if (Input.GetButtonDown("Fire1"))
@@ -28,7 +31,6 @@ public class Taper : MonoBehaviour {
         }
         else if (hit != null)
         {
-            Debug.Log("yolo");
             Destroy(hit);
             hitting = false;
         }
@@ -36,6 +38,12 @@ public class Taper : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("I collided");
+
+        if (other.GetComponent<Hittable>() as Hittable != null && hitting)
+        {
+            other.gameObject.transform.Translate(0.3f, 0, 0);
+            Destroy(hit);
+            hitting = false;
+        }
     }
 }
