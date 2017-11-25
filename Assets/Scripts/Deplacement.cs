@@ -23,7 +23,7 @@ public class Deplacement : MonoBehaviour {
 
     void FixedUpdate()
     {
-        transform.Translate(mvt.x, mvt.y, 0);
+        GetComponent<Rigidbody2D>().velocity = mvt;
         if (inputX == 0 && inputY > 0)
         {
             GetComponent<Direction>().Set(1);
