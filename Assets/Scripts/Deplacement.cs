@@ -31,6 +31,7 @@ public class Deplacement : MonoBehaviour {
 			GetComponent<MDirection> ().Set (Direction.BOTTOM);
 		} else if (inputX < 0 && inputY == 0) {
 			GetComponent<MDirection> ().Set (Direction.LEFT);
+
 		}
 	}
 }
