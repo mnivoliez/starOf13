@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NPCBisounoursBehavior : MonoBehaviour {
-
 	private FollowPath[] _FollowPaths;
 
 	// Use this for initialization
