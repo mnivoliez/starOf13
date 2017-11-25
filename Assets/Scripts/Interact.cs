@@ -53,7 +53,7 @@ public class Interact : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other) {
 		IInteractable ii = other.GetComponent<IInteractable> ();
 		if (ii != null && interacting) {
-			ii.Interact (this.gameObject);
+			ii.Interact (gameObject);
 			Destroy (interaction);
 			interacting = false;
 		}
