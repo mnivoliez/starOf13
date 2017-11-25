@@ -169,8 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f2fba2f21c18e4ca75c5a71c090847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
-  mvt: {x: 0, y: 0}
+  speed: 0
 --- !u!50 &178389480
 Rigidbody2D:
   serializedVersion: 4
@@ -179,7 +178,7 @@ Rigidbody2D:
     type: 2}
   m_PrefabInternal: {fileID: 459841809}
   m_GameObject: {fileID: 178389476}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -460,6 +459,16 @@ Prefab:
       propertyPath: m_Name
       value: punching ball
       objectReference: {fileID: 0}
+    - target: {fileID: 50563937123513400, guid: 34f7ce6b0d5030546891dc939cc07672,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114161121935111532, guid: 34f7ce6b0d5030546891dc939cc07672,
+        type: 2}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34f7ce6b0d5030546891dc939cc07672, type: 2}
   m_IsPrefabParent: 0
@@ -558,6 +567,8 @@ GameObject:
   - component: {fileID: 1890049708}
   - component: {fileID: 1890049707}
   - component: {fileID: 1890049706}
+  - component: {fileID: 1890049713}
+  - component: {fileID: 1890049714}
   m_Layer: 0
   m_Name: Personnage
   m_TagString: Untagged
@@ -600,8 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f2fba2f21c18e4ca75c5a71c090847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
-  mvt: {x: 0, y: 0}
+  speed: 0.025
 --- !u!50 &1890049709
 Rigidbody2D:
   serializedVersion: 4
@@ -708,6 +718,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1890049713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1890049705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d312819e85e1ac845b856f5908432d39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1890049714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1890049705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92c0f5656205b9f43ba22b5f9d927d31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2104566228
 Prefab:
   m_ObjectHideFlags: 0
@@ -746,6 +778,11 @@ Prefab:
     - target: {fileID: 4840751122768802, guid: 34f7ce6b0d5030546891dc939cc07672, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114161121935111532, guid: 34f7ce6b0d5030546891dc939cc07672,
+        type: 2}
+      propertyPath: speed
+      value: 0.025
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34f7ce6b0d5030546891dc939cc07672, type: 2}
