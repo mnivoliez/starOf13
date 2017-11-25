@@ -4,20 +4,57 @@ using UnityEngine;
 
 public class Deplacement : MonoBehaviour {
 
-     [SerializeField] private float speed = 0.1f;
+    [SerializeField] private float speed = 0.1f;
+    private Vector2 mvt;
+    private float inputX;
+    private float inputY;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        float inputX = Input.GetAxisRaw("Horizontal");
-        float inputY = Input.GetAxisRaw("Vertical");
-        if (inputX != 0 || inputY != 0)
+        inputX = Input.GetAxisRaw("Horizontal");
+        inputY = Input.GetAxisRaw("Vertical");
+        mvt = new Vector2(speed * inputX, speed * inputY);
+    }
+
+    void FixedUpdate()
+    {
+        transform.Translate(mvt.x, mvt.y, 0);
+        if (inputX == 0 && inputY > 0)
         {
-            transform.Translate(speed * inputX, speed * inputY, 0);
+            GetComponent<Direction>().Set(1);
+        }
+        else if (inputX > 0 && inputY > 0)
+        {
+            GetComponent<Direction>().Set(2);
+        }
+        else if (inputX > 0 && inputY == 0)
+        {
+            GetComponent<Direction>().Set(3);
+        }
+        else if (inputX > 0 && inputY < 0)
+        {
+            GetComponent<Direction>().Set(4);
+        }
+        else if (inputX == 0 && inputY < 0)
+        {
+            GetComponent<Direction>().Set(5);
+        }
+        else if (inputX < 0 && inputY < 0)
+        {
+            GetComponent<Direction>().Set(6);
+        }
+        else if (inputX < 0 && inputY == 0)
+        {
+            GetComponent<Direction>().Set(7);
+        }
+        else if (inputX < 0 && inputY > 0)
+        {
+            GetComponent<Direction>().Set(8);
         }
     }
 }
