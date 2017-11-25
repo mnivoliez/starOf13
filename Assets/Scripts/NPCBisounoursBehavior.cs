@@ -2,15 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCBisounoursBehavior : MonoBehaviour {
+public class NPCBisounoursBehavior : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private FollowPath[] _FollowPaths;
+
+    // Use this for initialization
+    void Start()
+    {
+        _FollowPaths = GetComponentsInParent<FollowPath>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    void OnDisable()
+    {
+        
+        foreach(FollowPath _FollowPath in _FollowPaths)
+        {
+            _FollowPath.enabled = false;
+        }
+        Debug.Log("falsed");
+    }
+
+    void OnEnable()
+    {
+        foreach (FollowPath _FollowPath in _FollowPaths)
+        {
+            _FollowPath.enabled = true;
+        }
+        Debug.Log("trued");
+    }
 }
