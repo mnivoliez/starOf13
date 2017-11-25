@@ -22,7 +22,7 @@ public class Interact : MonoBehaviour {
 					interaction = gameObject.AddComponent<BoxCollider2D> () as BoxCollider2D;
 					interaction.isTrigger = true;
 
-					switch (GetComponent<Direction> ().Get ()) {
+					switch (GetComponent<MDirection> ().Get ()) {
 					case 1:
 						interaction.size = new Vector2 (charSize.x, 0.1f);
 						interaction.offset = new Vector2 (0, charSize.y);

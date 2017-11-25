@@ -27,7 +27,7 @@ public class Taper : MonoBehaviour
                 hit = gameObject.AddComponent<BoxCollider2D>() as BoxCollider2D;
                 hit.isTrigger = true;
 
-                switch (GetComponent<Direction>().Get())
+                switch (GetComponent<MDirection>().Get())
                 {
                     case 1:
                         hit.size = new Vector2(charSize.x, 0.1f);
@@ -80,7 +80,7 @@ public class Taper : MonoBehaviour
 
         if (other.GetComponent<Hittable>() as Hittable != null && hitting)
         {
-            switch (GetComponent<Direction>().Get())
+            switch (GetComponent<MDirection>().Get())
             {
                 case 1:
                     other.gameObject.transform.Translate(0, knockback, 0);
