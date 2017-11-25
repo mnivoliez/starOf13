@@ -15,7 +15,7 @@ public class EnterHouse : MonoBehaviour {
     IEnumerator OnTriggerEnter2D(Collider2D other)
     {
         this.GetComponent<Animator>().SetBool("isChanging", true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.8f);
         SceneManager.LoadScene(houseSceneIndex);
     }
 }
