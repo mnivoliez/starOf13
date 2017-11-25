@@ -29,42 +29,26 @@ public class Taper : MonoBehaviour
 
                 switch (GetComponent<MDirection>().Get())
                 {
-                    case 1:
+                    case Direction.TOP:
                         hit.size = new Vector2(charSize.x, 0.1f);
                         hit.offset = new Vector2(0, charSize.y);
                         break;
-                    case 2:
-                        hit.size = new Vector2(0.1f, 0.1f);
-                        hit.offset = new Vector2(charSize.x, charSize.y);
-                        break;
-                    case 3:
+                    case Direction.RIGHT:
                         hit.size = new Vector2(0.1f, charSize.y);
                         hit.offset = new Vector2(charSize.x, 0);
                         break;
-                    case 4:
-                        hit.size = new Vector2(0.1f, 0.1f);
-                        hit.offset = new Vector2(charSize.x, -charSize.y);
-                        break;
-                    case 5:
+                    case Direction.BOTTOM:
                         hit.size = new Vector2(charSize.y, 0.1f);
                         hit.offset = new Vector2(0, -charSize.y);
                         break;
-                    case 6:
-                        hit.size = new Vector2(0.1f, 0.1f);
-                        hit.offset = new Vector2(-charSize.x, -charSize.y);
-                        break;
-                    case 7:
+                    case Direction.LEFT:
                         hit.size = new Vector2(0.1f, charSize.y);
                         hit.offset = new Vector2(-charSize.x, 0);
-                        break;
-                    case 8:
-                        hit.size = new Vector2(0.1f, 0.1f);
-                        hit.offset = new Vector2(-charSize.x, charSize.y);
                         break;
                     default:
                         break;
                 }
-                
+
                 hitting = true;
             }
         }
@@ -82,29 +66,17 @@ public class Taper : MonoBehaviour
         {
             switch (GetComponent<MDirection>().Get())
             {
-                case 1:
+                case Direction.TOP:
                     other.gameObject.transform.Translate(0, knockback, 0);
                     break;
-                case 2:
-                    other.gameObject.transform.Translate(knockbackDiago, knockbackDiago, 0);
-                    break;
-                case 3:
+                case Direction.RIGHT:
                     other.gameObject.transform.Translate(knockback, 0, 0);
                     break;
-                case 4:
-                    other.gameObject.transform.Translate(knockbackDiago, -knockbackDiago, 0);
-                    break;
-                case 5:
+                case Direction.BOTTOM:
                     other.gameObject.transform.Translate(0, -knockback, 0);
                     break;
-                case 6:
-                    other.gameObject.transform.Translate(-knockbackDiago, -knockbackDiago, 0);
-                    break;
-                case 7:
+                case Direction.LEFT:
                     other.gameObject.transform.Translate(-knockback, 0, 0);
-                    break;
-                case 8:
-                    other.gameObject.transform.Translate(-knockbackDiago, knockbackDiago, 0);
                     break;
                 default:
                     break;

@@ -26,35 +26,19 @@ public class Deplacement : MonoBehaviour {
         GetComponent<Rigidbody2D>().velocity = mvt;
         if (inputX == 0 && inputY > 0)
         {
-            GetComponent<Direction>().Set(1);
-        }
-        else if (inputX > 0 && inputY > 0)
-        {
-            GetComponent<Direction>().Set(2);
+            GetComponent<MDirection>().Set(Direction.TOP);
         }
         else if (inputX > 0 && inputY == 0)
         {
-            GetComponent<Direction>().Set(3);
-        }
-        else if (inputX > 0 && inputY < 0)
-        {
-            GetComponent<Direction>().Set(4);
+            GetComponent<MDirection>().Set(Direction.RIGHT);
         }
         else if (inputX == 0 && inputY < 0)
         {
-            GetComponent<Direction>().Set(5);
-        }
-        else if (inputX < 0 && inputY < 0)
-        {
-            GetComponent<Direction>().Set(6);
+            GetComponent<MDirection>().Set(Direction.BOTTOM);
         }
         else if (inputX < 0 && inputY == 0)
         {
-            GetComponent<Direction>().Set(7);
-        }
-        else if (inputX < 0 && inputY > 0)
-        {
-            GetComponent<Direction>().Set(8);
+            GetComponent<MDirection>().Set(Direction.LEFT);
         }
     }
 }
