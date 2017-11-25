@@ -6,6 +6,7 @@ public class NPCController : MonoBehaviour, IPhaseDriven {
 	private NPCBisounoursBehavior _bisounours;
 	private NPCJasonBehavior _jason;
 
+
 	// Use this for initialization
 	void Start () {
 		_bisounours = gameObject.GetComponent<NPCBisounoursBehavior> ();
