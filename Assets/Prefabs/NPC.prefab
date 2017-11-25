@@ -21,6 +21,9 @@ GameObject:
   - component: {fileID: 4131834867767254}
   - component: {fileID: 212918617875336046}
   - component: {fileID: 61137175072978454}
+  - component: {fileID: 114012655779400274}
+  - component: {fileID: 114320291669618938}
+  - component: {fileID: 114725091508343130}
   - component: {fileID: 50147208852569036}
   - component: {fileID: 114312771150083850}
   - component: {fileID: 114708801145312930}
@@ -92,6 +95,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
+--- !u!114 &114012655779400274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111895878973586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab37fbe05cf5946e8a2b6847a9e98036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114061391646242326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,6 +140,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.025
+--- !u!114 &114320291669618938
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111895878973586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f48b2113e3748cd8f207d49d252b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114328684025625992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,6 +171,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3384e21c1bcb7ff4b90bad053e003be6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114725091508343130
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111895878973586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1dc0bb6ce094bee86ca43449792229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212918617875336046
