@@ -17,7 +17,7 @@ public class InventoryController : MonoBehaviour {
 		
 	}
 
-	void TryBuyItem (ShopItemStandBehavior item) {
+	public void TryBuyItem (ShopItemStandBehavior item) {
 		if (CanBuy (item)) {
 			switch (item.GetItemType ()) {
 			case ItemType.FOOD:

@@ -18,7 +18,7 @@ public class ItemBase {
 /**
  * Contain the data for specific item.
  **/
-public class ShopItemStandBehavior : MonoBehaviour {
+public class ShopItemStandBehavior : MonoBehaviour, IInteractable {
 
 	[SerializeField] private ItemType _item_type;
 	[SerializeField] private int _price;
@@ -54,4 +54,12 @@ public class ShopItemStandBehavior : MonoBehaviour {
 	public void TakeOne () {
 		_stock--;
 	}
+
+	public void Interact (GameObject go) {
+		InventoryController ic = go.GetComponent<InventoryController> ();
+		if (ic) {
+			ic.TryBuyItem (this);
+		}
+	}
+		
 }
