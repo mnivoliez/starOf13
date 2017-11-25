@@ -23,8 +23,12 @@ public class Deplacement : MonoBehaviour {
 
     void FixedUpdate()
     {
+<<<<<<< HEAD
         this.GetComponent<Rigidbody2D>().velocity = mvt;
         //transform.Translate(mvt.x, mvt.y, 0);
+=======
+        GetComponent<Rigidbody2D>().velocity = mvt;
+>>>>>>> ajout path system NPC
         if (inputX == 0 && inputY > 0)
         {
             GetComponent<Direction>().Set(1);
