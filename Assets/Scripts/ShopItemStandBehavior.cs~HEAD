@@ -7,6 +7,17 @@ public enum ItemType {
 	BASEBALL_BAT
 }
 
+[System.Serializable]
+public class ItemBase {
+	public ItemType _item_type;
+	public int _base_price;
+	public string _description;
+	public string _name;
+}
+
+/**
+ * Contain the data for specific item.
+ **/
 public class ShopItemStandBehavior : MonoBehaviour {
 
 	[SerializeField] private ItemType _item_type;
