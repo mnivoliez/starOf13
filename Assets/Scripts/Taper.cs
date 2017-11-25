@@ -7,7 +7,6 @@ public class Taper : MonoBehaviour
     bool hitting = false;
     BoxCollider2D hit = null;
     float knockback = 0.3f;
-    float knockbackDiago = 0.15f;
 
     // Use this for initialization
     void Start()

@@ -9,7 +9,7 @@ public class FollowPath : MonoBehaviour
     public float MoveSpeed = 1;
     float Timer;
     int CurrentNode;
-    static Vector3 CurrentPositionHolder;
+    Vector3 CurrentPositionHolder;
 
     // Use this for initialization
     void Start()
