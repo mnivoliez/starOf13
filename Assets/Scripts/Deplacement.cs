@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Deplacement : MonoBehaviour {
 
-     [SerializeField] private float speed = 0.1f;
+    [SerializeField] private float speed = 0.1f;
+    [SerializeField] private Vector2 mvt;
 
 	// Use this for initialization
 	void Start () {
@@ -15,9 +16,11 @@ public class Deplacement : MonoBehaviour {
 	void Update () {
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
-        if (inputX != 0 || inputY != 0)
-        {
-            transform.Translate(speed * inputX, speed * inputY, 0);
-        }
+        mvt = new Vector2(speed * inputX, speed * inputY);
+    }
+
+    void FixedUpdate()
+    {
+        transform.Translate(mvt.x, mvt.y, 0);
     }
 }
