@@ -14,6 +14,7 @@ public class ItemBase {
 	public int stock;
 	public string description;
 	public string name;
+	public Sprite sprite;
 }
 
 /**
@@ -26,6 +27,7 @@ public class ShopItemStandBehavior : MonoBehaviour, IInteractable {
 	[SerializeField] private int _stock;
 	[SerializeField] private string _description;
 	[SerializeField] private string _name;
+	[SerializeField] private SpriteRenderer _item_sprite;
 
 	// Use this for initialization
 	void Start () {
@@ -57,7 +59,7 @@ public class ShopItemStandBehavior : MonoBehaviour, IInteractable {
 		_stock--;
 	}
 
-	public void Init (ItemType it, int price, int stock, string name, string description) {
+	public void Init (ItemType it, int price, int stock, string name, string description, Sprite sp) {
 		_item_type = it;
 		_price = price;
 		_stock = stock;
