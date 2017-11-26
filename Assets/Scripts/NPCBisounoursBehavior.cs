@@ -19,24 +19,26 @@ public class NPCBisounoursBehavior : MonoBehaviour
 
     }
 
-    void OnDisable()
+    public void EnterPhase(Phase phase)
     {
-        
-        foreach(FollowPath _FollowPath in _FollowPaths)
+        switch (phase)
         {
-            _FollowPath.enabled = false;
+            case Phase.BISOUNOURS:
+                foreach (FollowPath _FollowPath in _FollowPaths)
+                {
+                    _FollowPath.enabled = true;
+                }
+                GetComponent<NPCTaper>().enabled = false;
+                GetComponent<Hittable>().enabled = false;
+                break;
+            case Phase.FRIDAY_13:
+                foreach (FollowPath _FollowPath in _FollowPaths)
+                {
+                    _FollowPath.enabled = false;
+                }
+                GetComponent<NPCTaper>().enabled = true;
+                GetComponent<Hittable>().enabled = true;
+                break;
         }
-        GetComponent<NPCTaper>().enabled = true;
-        Debug.Log("falsed");
-    }
-
-    void OnEnable()
-    {
-        foreach (FollowPath _FollowPath in _FollowPaths)
-        {
-            _FollowPath.enabled = true;
-        }
-        GetComponent<NPCTaper>().enabled = false;
-        Debug.Log("trued");
     }
 }
