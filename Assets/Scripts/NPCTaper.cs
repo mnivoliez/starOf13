@@ -7,7 +7,7 @@ public class NPCTaper : MonoBehaviour
 
     bool hitting = false;
     BoxCollider2D hit = null;
-    float knockback = 0.3f;
+    float knockback = 1000f;
     public int Timer;
     public int modulus = 40;
 
@@ -29,7 +29,7 @@ public class NPCTaper : MonoBehaviour
                 Vector2 charSize = GetComponent<Renderer>().bounds.size;
                 hit = gameObject.AddComponent<BoxCollider2D>() as BoxCollider2D;
                 hit.isTrigger = true;
-
+                GetComponent<Animator>().SetBool("isHitting", true);
                 switch (GetComponent<MDirection>().Get())
                 {
                     case Direction.TOP:
@@ -51,7 +51,6 @@ public class NPCTaper : MonoBehaviour
                     default:
                         break;
                 }
-
                 hitting = true;
             }
         }
@@ -64,9 +63,12 @@ public class NPCTaper : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<Hittable>() as Hittable != null && hitting)
+        Debug.Log(other.GetComponent<Hittable>());
+        Debug.Log(hitting);
+        if (other.GetComponent<Hittable>() != null)
         {
-            switch (GetComponent<MDirection>().Get())
+            Debug.Log("hey");
+            /*switch (GetComponent<MDirection>().Get())
             {
                 case Direction.TOP:
                     other.gameObject.transform.Translate(0, knockback, 0);
@@ -82,7 +84,15 @@ public class NPCTaper : MonoBehaviour
                     break;
                 default:
                     break;
-            }
+            }*/
+            float kbX = (transform.position.x - other.transform.position.x) % 1;
+            float kbY = (transform.position.y - other.transform.position.y) % 1;
+            
+            other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(kbX * knockback, kbY * knockback);
+
+
+            other.GetComponent<Player>().hit();
+            Debug.Log(other.GetComponent<Player>().getCurrentHealth());
             Debug.Log("hit");
             Destroy(hit);
             hitting = false;

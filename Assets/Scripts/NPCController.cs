@@ -21,11 +21,13 @@ public class NPCController : MonoBehaviour, IPhaseDriven {
 	public void EnterPhase (Phase phase) {
 		switch (phase) {
 		case Phase.BISOUNOURS:
+            GetComponent<Animator>().SetBool("isEvil", false);
 			_bisounours.enabled = true;
 			_jason.enabled = false;
 			break;
 		case Phase.FRIDAY_13:
-			_bisounours.enabled = false;
+            GetComponent<Animator>().SetBool("isEvil", true);
+           _bisounours.enabled = false;
 			_jason.enabled = true;
 			break;
 		}

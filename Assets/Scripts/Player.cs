@@ -32,9 +32,6 @@ public class Player : MonoBehaviour
             {
                 Die();
             }
-            if (Input.GetKeyDown(KeyCode.Space))
-                hit();
-            Debug.Log(curHealth);
         }
     }
 
