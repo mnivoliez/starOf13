@@ -15,7 +15,7 @@ public class PhaseManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		BroadcastMessage ("EnterPhase", _current_phase);
 	}
 	
 	// Update is called once per frame

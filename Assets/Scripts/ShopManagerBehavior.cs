@@ -5,7 +5,7 @@ using UnityEngine;
 /**
  * The goal here is to propose a manager which generate item stand on the go at the "opening" of the store.
  **/
-public class ShopManagerBehavior : MonoBehaviour, IIPhaseDriven {
+public class ShopManagerBehavior : MonoBehaviour, IPhaseDriven {
 	[SerializeField] private ShopItemStandBehavior _itemStandPrefab;
 	[SerializeField] private bool _is_open;
 	[SerializeField] private List<ItemBase> _base_items;
