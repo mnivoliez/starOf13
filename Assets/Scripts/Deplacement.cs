@@ -16,13 +16,14 @@ public class Deplacement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        inputX = Input.GetAxisRaw("Horizontal");
-        inputY = Input.GetAxisRaw("Vertical");
-        mvt = new Vector2(speed * inputX, speed * inputY);
+
     }
 
     void FixedUpdate()
     {
+        inputX = Input.GetAxisRaw("Horizontal");
+        inputY = Input.GetAxisRaw("Vertical");
+        mvt = new Vector2(speed * inputX, speed * inputY);
         this.GetComponent<Rigidbody2D>().velocity = mvt;
         //transform.Translate(mvt.x, mvt.y, 0);
         if (inputX == 0 && inputY > 0)
@@ -56,6 +57,32 @@ public class Deplacement : MonoBehaviour {
         else if (inputX < 0 && inputY > 0)
         {
             GetComponent<Direction>().Set(8);
+        }
+
+        if (inputX > 0)
+        {
+            GetComponent<Animator>().SetInteger("X", 1);
+        }
+        else if (inputX < 0)
+        {
+            GetComponent<Animator>().SetInteger("X", -1);
+        }
+        else
+        {
+            GetComponent<Animator>().SetInteger("X", 0);
+        }
+
+        if (inputY > 0)
+        {
+            GetComponent<Animator>().SetInteger("Y", 1);
+        }
+        else if (inputY < 0)
+        {
+            GetComponent<Animator>().SetInteger("Y", -1);
+        }
+        else
+        {
+            GetComponent<Animator>().SetInteger("Y", 0);
         }
     }
 }
