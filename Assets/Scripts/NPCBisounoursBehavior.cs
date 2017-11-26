@@ -26,6 +26,7 @@ public class NPCBisounoursBehavior : MonoBehaviour
         {
             _FollowPath.enabled = false;
         }
+        GetComponent<NPCTaper>().enabled = true;
         Debug.Log("falsed");
     }
 
@@ -35,6 +36,7 @@ public class NPCBisounoursBehavior : MonoBehaviour
         {
             _FollowPath.enabled = true;
         }
+        GetComponent<NPCTaper>().enabled = false;
         Debug.Log("trued");
     }
 }
