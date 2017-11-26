@@ -2,35 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCBisounoursBehavior : MonoBehaviour {
-	private FollowPath[] _FollowPaths;
-
+public class NPCBisounoursBehavior : MonoBehaviour, IInteractable {
 	// Use this for initialization
 	void Start () {
-		_FollowPaths = GetComponentsInParent<FollowPath> ();
-	}
+        
+    }
 
 	// Update is called once per frame
 	void Update () {
 
 	}
 
-	public void EnterPhase (Phase phase) {
-		switch (phase) {
-		case Phase.BISOUNOURS:
-			foreach (FollowPath _FollowPath in _FollowPaths) {
-				_FollowPath.enabled = true;
-			}
-			GetComponent<NPCTaper> ().enabled = false;
-			GetComponent<Hittable> ().enabled = false;
-			break;
-		case Phase.FRIDAY_13:
-			foreach (FollowPath _FollowPath in _FollowPaths) {
-				_FollowPath.enabled = false;
-			}
-			GetComponent<NPCTaper> ().enabled = true;
-			GetComponent<Hittable> ().enabled = true;
-			break;
-		}
-	}
+    public void Interact(GameObject player)
+    {
+        if (GetComponent<NPCBisounoursBehavior>().enabled)
+        {
+            int dialNbr = Random.Range(1, 4);
+
+            switch (dialNbr)
+            {
+                case 1:
+                    GameObject.FindGameObjectWithTag("Dialogue").GetComponent<UnityEngine.UI.Text>().text = "Hey! How are you doing ?";
+                    FindObjectOfType<AudioManager>().Play("girl_0");
+                    break;
+                case 2:
+                    GameObject.FindGameObjectWithTag("Dialogue").GetComponent<UnityEngine.UI.Text>().text = "Nice day, isn't it ?";
+                    FindObjectOfType<AudioManager>().Play("girl_0");
+                    break;
+                case 3:
+                    GameObject.FindGameObjectWithTag("Dialogue").GetComponent<UnityEngine.UI.Text>().text = "Welcome in the best village ever ! :)";
+                    FindObjectOfType<AudioManager>().Play("girl_1");
+                    break;
+            }
+        }
+    }
 }

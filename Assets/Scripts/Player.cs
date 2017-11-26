@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class Player : MonoBehaviour
     void Die()
     {
         isAlive = false;
+        SceneManager.LoadScene(1);
     }
 
     public void hit()

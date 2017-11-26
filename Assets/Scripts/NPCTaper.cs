@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCTaper : MonoBehaviour
+public class NPCTaper : MonoBehaviour, IPhaseDriven
 {
 
     bool hitting = false;
@@ -21,7 +22,7 @@ public class NPCTaper : MonoBehaviour
     void Update()
     {
         Timer++;
-        if (!hitting)
+        if (hitting)
         {
             if (Timer % modulus == 0)
             {
@@ -54,12 +55,11 @@ public class NPCTaper : MonoBehaviour
                 hitting = true;
             }
         }
-        else if (hit != null)
-        {
-            Destroy(hit);
-            hitting = false;
-        }
     }
+
+
+
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -87,7 +87,7 @@ public class NPCTaper : MonoBehaviour
             }*/
             float kbX = (transform.position.x - other.transform.position.x) % 1;
             float kbY = (transform.position.y - other.transform.position.y) % 1;
-            
+
             other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(kbX * knockback, kbY * knockback);
 
 
@@ -96,6 +96,18 @@ public class NPCTaper : MonoBehaviour
             Debug.Log("hit");
             Destroy(hit);
             hitting = false;
+        }
+
+    public void EnterPhase(Phase phase)
+    {
+        switch (phase)
+        {
+            case Phase.BISOUNOURS:
+                hitting = false;
+                break;
+            case Phase.FRIDAY_13:
+                hitting = true;
+                break;
         }
     }
 }
