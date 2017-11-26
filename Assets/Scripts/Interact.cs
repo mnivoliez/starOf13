@@ -23,20 +23,20 @@ public class Interact : MonoBehaviour {
 
 				switch (GetComponent<MDirection> ().Get ()) {
 				case Direction.TOP:
-					interaction.size = new Vector2 (charSize.x, 0.1f);
-					interaction.offset = new Vector2 (0, charSize.y);
+					interaction.size = new Vector2 (charSize.x / 10, charSize.y / 10);
+					interaction.offset = new Vector2 (0, charSize.y / 10);
 					break;
 				case Direction.RIGHT:
-					interaction.size = new Vector2 (0.1f, charSize.y);
-					interaction.offset = new Vector2 (charSize.x, 0);
+					interaction.size = new Vector2 (charSize.x / 10, charSize.y / 10);
+					interaction.offset = new Vector2 (charSize.x / 10, 0);
 					break;
 				case Direction.BOTTOM:
-					interaction.size = new Vector2 (charSize.y, 0.1f);
-					interaction.offset = new Vector2 (0, -charSize.y);
+					interaction.size = new Vector2 (charSize.x / 10, charSize.y / 10);
+					interaction.offset = new Vector2 (0, -charSize.y / 10);
 					break;
 				case Direction.LEFT:
-					interaction.size = new Vector2 (0.1f, charSize.y);
-					interaction.offset = new Vector2 (-charSize.x, 0);
+					interaction.size = new Vector2 (charSize.x / 10, charSize.y / 10);
+					interaction.offset = new Vector2 (-charSize.x / 10, 0);
 					break;
 				default:
 					break;
