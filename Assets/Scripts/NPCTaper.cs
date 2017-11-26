@@ -65,7 +65,7 @@ public class NPCTaper : MonoBehaviour, IPhaseDriven
     {
         Debug.Log(other.GetComponent<Hittable>());
         Debug.Log(hitting);
-        if (other.GetComponent<Hittable>() != null)
+        if (other.GetComponent<Hittable>() != null && Timer == 0)
         {
             Debug.Log("hey");
             /*switch (GetComponent<MDirection>().Get())
@@ -94,9 +94,8 @@ public class NPCTaper : MonoBehaviour, IPhaseDriven
             other.GetComponent<Player>().hit();
             Debug.Log(other.GetComponent<Player>().getCurrentHealth());
             Debug.Log("hit");
-            Destroy(hit);
-            hitting = false;
         }
+    }
 
     public void EnterPhase(Phase phase)
     {
@@ -104,9 +103,10 @@ public class NPCTaper : MonoBehaviour, IPhaseDriven
         {
             case Phase.BISOUNOURS:
                 hitting = false;
+                Destroy(hit);
                 break;
             case Phase.FRIDAY_13:
-                hitting = true;
+                hitting = true;                
                 break;
         }
     }
