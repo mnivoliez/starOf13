@@ -28,35 +28,35 @@ public class Deplacement : MonoBehaviour {
         //transform.Translate(mvt.x, mvt.y, 0);
         if (inputX == 0 && inputY > 0)
         {
-            GetComponent<Direction>().Set(1);
+            GetComponent<MDirection>().Set(Direction.TOP);
         }
         else if (inputX > 0 && inputY > 0)
         {
-            GetComponent<Direction>().Set(2);
+            GetComponent<MDirection>().Set(Direction.TOP);
         }
         else if (inputX > 0 && inputY == 0)
         {
-            GetComponent<Direction>().Set(3);
+            GetComponent<MDirection>().Set(Direction.RIGHT);
         }
         else if (inputX > 0 && inputY < 0)
         {
-            GetComponent<Direction>().Set(4);
+            GetComponent<MDirection>().Set(Direction.BOTTOM);
         }
         else if (inputX == 0 && inputY < 0)
         {
-            GetComponent<Direction>().Set(5);
+            GetComponent<MDirection>().Set(Direction.BOTTOM);
         }
         else if (inputX < 0 && inputY < 0)
         {
-            GetComponent<Direction>().Set(6);
+            GetComponent<MDirection>().Set(Direction.BOTTOM);
         }
         else if (inputX < 0 && inputY == 0)
         {
-            GetComponent<Direction>().Set(7);
+            GetComponent<MDirection>().Set(Direction.LEFT);
         }
         else if (inputX < 0 && inputY > 0)
         {
-            GetComponent<Direction>().Set(8);
+            GetComponent<MDirection>().Set(Direction.TOP);
         }
 
         if (inputX > 0)
