@@ -19,7 +19,7 @@ public class Taper : MonoBehaviour
 			if (Input.GetButtonDown ("Fire1")) {
 				GetComponent<Animator> ().SetBool ("isHitting", true);
 
-				Vector2 charSize = GetComponent<Renderer> ().bounds.size;
+				Vector2 charSize = GetComponent<BoxCollider2D> ().bounds.size;
 
 				hit = gameObject.AddComponent<BoxCollider2D> () as BoxCollider2D;
 				hit.isTrigger = true;
@@ -27,20 +27,20 @@ public class Taper : MonoBehaviour
                 switch (GetComponent<MDirection>().Get())
                 {
                     case Direction.TOP:
-                        hit.size = new Vector2(charSize.y / 10, charSize.x / 10);
-                        hit.offset = new Vector2(0, charSize.y / 10);
+                        hit.size = new Vector2(charSize.x / 5, charSize.y / 5);
+                        hit.offset = new Vector2(0, charSize.y / 5);
                         break;
                     case Direction.RIGHT:
-                        hit.size = new Vector2(charSize.y / 10, charSize.x / 10);
-                        hit.offset = new Vector2(charSize.x / 10, 0);
+                        hit.size = new Vector2(charSize.x / 5, charSize.y / 5);
+                        hit.offset = new Vector2(charSize.x / 5, 0);
                         break;
                     case Direction.BOTTOM:
-                        hit.size = new Vector2(charSize.y / 10, charSize.x / 10);
-                        hit.offset = new Vector2(0, -charSize.y / 10);
+                        hit.size = new Vector2(charSize.x / 5, charSize.y / 5);
+                        hit.offset = new Vector2(0, -charSize.y / 5);
                         break;
                     case Direction.LEFT:
-                        hit.size = new Vector2(charSize.y / 10, charSize.x / 10);
-                        hit.offset = new Vector2(-charSize.x / 10, 0);
+                        hit.size = new Vector2(charSize.x / 5, charSize.y / 5);
+                        hit.offset = new Vector2(-charSize.x / 5, 0);
                         break;
                     default:
                         break;
@@ -55,34 +55,37 @@ public class Taper : MonoBehaviour
 		}
 	}
 
-	void OnTriggerEnter2D (Collider2D other) {
-
-        if (other.GetComponent<Hittable>() as Hittable != null && hitting)
+	void OnTriggerEnter2D (Collider2D other)
+    {
+        if (!other.GetComponent<NPCBisounoursBehavior>().enabled)
         {
-            switch (GetComponent<MDirection>().Get())
+            if (other.GetComponent<Hittable>() as Hittable != null && hitting)
             {
-                case Direction.TOP:
-                    other.gameObject.transform.Translate(0, knockback, 0);
-                    Debug.Log("top");
-                    break;
-                case Direction.RIGHT:
-                    other.gameObject.transform.Translate(knockback, 0, 0);
-                    Debug.Log("right");
-                    break;
-                case Direction.BOTTOM:
-                    other.gameObject.transform.Translate(0, -knockback, 0);
-                    Debug.Log("bottom");
-                    break;
-                case Direction.LEFT:
-                    other.gameObject.transform.Translate(-knockback, 0, 0);
-                    Debug.Log("left");
-                    break;
-                default:
-                    break;
+                switch (GetComponent<MDirection>().Get())
+                {
+                    case Direction.TOP:
+                        other.gameObject.transform.Translate(0, knockback, 0);
+                        Debug.Log("top");
+                        break;
+                    case Direction.RIGHT:
+                        other.gameObject.transform.Translate(knockback, 0, 0);
+                        Debug.Log("right");
+                        break;
+                    case Direction.BOTTOM:
+                        other.gameObject.transform.Translate(0, -knockback, 0);
+                        Debug.Log("bottom");
+                        break;
+                    case Direction.LEFT:
+                        other.gameObject.transform.Translate(-knockback, 0, 0);
+                        Debug.Log("left");
+                        break;
+                    default:
+                        break;
+                }
+                Destroy(hit);
+                hitting = false;
+                GetComponent<Animator>().SetBool("isHitting", false);
             }
-            Destroy(hit);
-            hitting = false;
-            GetComponent<Animator>().SetBool("isHitting", false);
         }
     }
 }
