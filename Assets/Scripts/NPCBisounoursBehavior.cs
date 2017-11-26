@@ -1,60 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class NPCBisounoursBehavior : MonoBehaviour, IInteractable
-{
+public class NPCBisounoursBehavior : MonoBehaviour {
+	private FollowPath[] _FollowPaths;
 
-    private FollowPath[] _FollowPaths;
+	// Use this for initialization
+	void Start () {
+		_FollowPaths = GetComponentsInParent<FollowPath> ();
+	}
 
-    // Use this for initialization
-    void Start()
-    {
-        _FollowPaths = GetComponentsInParent<FollowPath>();
-    }
+	// Update is called once per frame
+	void Update () {
 
-    // Update is called once per frame
-    void Update()
-    {
+	}
 
-    }
-
-    public void Interact(GameObject player)
-    {
-        int dialogueNumber = Random.Range(1, 4);
-
-        switch (dialogueNumber)
-        {
-            case 1:
-                GetComponent<Text>().text = "Hey!";
-                break;
-            case 2:
-                GetComponent<Text>().text = "Hey!";
-                break;
-            case 3:
-                GetComponent<Text>().text = "Hey!";
-                break;
-            case 4:
-                GetComponent<Text>().text = "Hey!";
-                break;
-        }
-    }
-
-    void OnDisable()
-    {
-        
-        foreach(FollowPath _FollowPath in _FollowPaths)
-        {
-            _FollowPath.enabled = false;
-        }
-    }
-
-    void OnEnable()
-    {
-        foreach (FollowPath _FollowPath in _FollowPaths)
-        {
-            _FollowPath.enabled = true;
-        }
-    }
+	public void EnterPhase (Phase phase) {
+		switch (phase) {
+		case Phase.BISOUNOURS:
+			foreach (FollowPath _FollowPath in _FollowPaths) {
+				_FollowPath.enabled = true;
+			}
+			GetComponent<NPCTaper> ().enabled = false;
+			GetComponent<Hittable> ().enabled = false;
+			break;
+		case Phase.FRIDAY_13:
+			foreach (FollowPath _FollowPath in _FollowPaths) {
+				_FollowPath.enabled = false;
+			}
+			GetComponent<NPCTaper> ().enabled = true;
+			GetComponent<Hittable> ().enabled = true;
+			break;
+		}
+	}
 }
