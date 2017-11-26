@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4712564635698892}
   - component: {fileID: 82826000115090074}
-  - component: {fileID: 114664060565430070}
+  - component: {fileID: 114131836292248064}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -121,7 +121,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114664060565430070
+--- !u!114 &114131836292248064
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -129,61 +129,61 @@ MonoBehaviour:
   m_GameObject: {fileID: 1538520740383548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d17e760b29d48b14a927183868037972, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f0fb42e1b4c84640ab1fda6e180c5b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Musique
-    clip: {fileID: 8300000, guid: 2758567b39db235468e0df2e31238269, type: 3}
-    volume: 0.347
-    pitch: 0.989
+  - name: Music_Normal
+    clip: {fileID: 8300000, guid: 8457dbdfe885a40dd81f52ad44d7e860, type: 3}
+    volume: 0.383
+    pitch: 0.97
     loop: 1
     source: {fileID: 0}
-  - name: Musique_V13
-    clip: {fileID: 8300000, guid: 2758567b39db235468e0df2e31238269, type: 3}
-    volume: 0.347
-    pitch: 0.989
+  - name: Music_V13
+    clip: {fileID: 8300000, guid: 2eef6c60b4f3c4ad0b7e460d8fb7b7de, type: 3}
+    volume: 0.386
+    pitch: 0.97
     loop: 1
     source: {fileID: 0}
-  - name: girl_0
-    clip: {fileID: 8300000, guid: a99e280a74dff9d4d99e2708f5e784d1, type: 3}
-    volume: 0.811
-    pitch: 0.989
-    loop: 0
-    source: {fileID: 0}
-  - name: girl_1
-    clip: {fileID: 8300000, guid: 53ea1d83613297c4190caf9084852dee, type: 3}
-    volume: 0.811
-    pitch: 0.989
+  - name: attack
+    clip: {fileID: 8300000, guid: 5d0fdf987bae9414e864ef8d81581ae8, type: 3}
+    volume: 0.682
+    pitch: 0.97
     loop: 0
     source: {fileID: 0}
   - name: boy_0
-    clip: {fileID: 8300000, guid: d5a2cca67a28a7b4b85d8765783141de, type: 3}
-    volume: 0.811
-    pitch: 0.989
+    clip: {fileID: 8300000, guid: 400a1efffa98643f2a424028f35fe337, type: 3}
+    volume: 0.682
+    pitch: 0.97
     loop: 0
     source: {fileID: 0}
   - name: boy_1
-    clip: {fileID: 8300000, guid: 8646ff50f1cf2c94c9a3c195b42f2bdc, type: 3}
-    volume: 0.811
-    pitch: 0.989
+    clip: {fileID: 8300000, guid: b0e10bccc9708450bbd54da35333f987, type: 3}
+    volume: 0.682
+    pitch: 0.97
     loop: 0
     source: {fileID: 0}
   - name: boy_2
-    clip: {fileID: 8300000, guid: 7ca3af62e2ee3f2408792616fac71ead, type: 3}
-    volume: 0.811
-    pitch: 0.989
-    loop: 0
-    source: {fileID: 0}
-  - name: attack
-    clip: {fileID: 8300000, guid: abdeafb8fee04354db26dd8a80a0bd7d, type: 3}
-    volume: 0.811
-    pitch: 0.989
+    clip: {fileID: 8300000, guid: d37b7648f36b94d84999cc5958550dbc, type: 3}
+    volume: 0.682
+    pitch: 0.97
     loop: 0
     source: {fileID: 0}
   - name: game_over
-    clip: {fileID: 8300000, guid: be3b37606f5538049bdc171a2df8ec7b, type: 3}
-    volume: 0.425
-    pitch: 0.989
+    clip: {fileID: 8300000, guid: 9a94c49986d5347cb9bf08251b3b3a63, type: 3}
+    volume: 0.682
+    pitch: 0.97
+    loop: 0
+    source: {fileID: 0}
+  - name: girl_0
+    clip: {fileID: 8300000, guid: 2ff8ebcaca4e741549207489e6da4e8e, type: 3}
+    volume: 0.682
+    pitch: 0.97
+    loop: 0
+    source: {fileID: 0}
+  - name: girl_1
+    clip: {fileID: 8300000, guid: c24e049c65a2848deb587604a28a3cd9, type: 3}
+    volume: 0.682
+    pitch: 0.97
     loop: 0
     source: {fileID: 0}

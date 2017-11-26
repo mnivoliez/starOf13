@@ -33,6 +33,7 @@ GameObject:
   - component: {fileID: 114333625182232628}
   - component: {fileID: 114139862481426308}
   - component: {fileID: 114098693126280594}
+  - component: {fileID: 114387594396170816}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -137,7 +138,7 @@ MonoBehaviour:
   radiusSteeringFoldout: 1
   Seek:
     TargetObjective: 1
-    MagnitudeMultiplier: 2
+    MagnitudeMultiplier: 1
     SensitivityOffset: 0
     ValueWriting: 0
     LayerBlending: 0
@@ -150,7 +151,7 @@ MonoBehaviour:
     Prediction: 0
     PredictionMagnitude: 0
     InnerRadius: 0
-    OuterRadius: 20
+    OuterRadius: 15
     RadiusMapping: 2
     ForEachReceptor: 0
 --- !u!114 &114066562910742852
@@ -225,7 +226,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1111895878973586}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -2048606044, guid: e915c74e1c72d7449bcfaa622335b980, type: 3}
   m_Name: 
@@ -283,6 +284,18 @@ MonoBehaviour:
     AngleMapping: 2
     MaxIncrease: 0.2
     MaxAngle: 45
+--- !u!114 &114387594396170816
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111895878973586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab37fbe05cf5946e8a2b6847a9e98036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aim_controller: {fileID: 114098693126280594}
 --- !u!114 &114413834741545230
 MonoBehaviour:
   m_ObjectHideFlags: 1

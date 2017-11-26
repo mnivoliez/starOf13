@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NPCJasonBehavior : MonoBehaviour {
+	[SerializeField]
 	private Polarith.AI.Move.AIMSimpleController2D _aim_controller;
 
 	void Awake () {
