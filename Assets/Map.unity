@@ -4152,7 +4152,7 @@ MonoBehaviour:
   - {fileID: 21300004, guid: 8aa86dbfc33fd724c86e78604b7865ce, type: 3}
   - {fileID: 21300002, guid: 8aa86dbfc33fd724c86e78604b7865ce, type: 3}
   - {fileID: 21300000, guid: 8aa86dbfc33fd724c86e78604b7865ce, type: 3}
-  HeartUi: {fileID: 0}
+  HeartUi: {fileID: 1988029693}
   player: {fileID: 0}
 --- !u!1 &545260448
 GameObject:
@@ -14562,7 +14562,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1988029691}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -463.2, y: -207.3, z: 0}
+  m_LocalPosition: {x: -409.6, y: -198.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1812823123}
@@ -14570,8 +14570,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -463.2, y: -207.3}
-  m_SizeDelta: {x: 23.22, y: 20.83}
+  m_AnchoredPosition: {x: -409.6, y: -198.7}
+  m_SizeDelta: {x: 8.634, y: 6.595}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1988029693
 MonoBehaviour:
