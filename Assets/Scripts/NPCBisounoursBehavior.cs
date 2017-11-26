@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class NPCBisounoursBehavior : MonoBehaviour
+public class NPCBisounoursBehavior : MonoBehaviour, IInteractable
 {
 
     private FollowPath[] _FollowPaths;
@@ -19,6 +20,27 @@ public class NPCBisounoursBehavior : MonoBehaviour
 
     }
 
+    public void Interact(GameObject player)
+    {
+        int dialogueNumber = Random.Range(1, 4);
+
+        switch (dialogueNumber)
+        {
+            case 1:
+                GetComponent<Text>().text = "Hey!";
+                break;
+            case 2:
+                GetComponent<Text>().text = "Hey!";
+                break;
+            case 3:
+                GetComponent<Text>().text = "Hey!";
+                break;
+            case 4:
+                GetComponent<Text>().text = "Hey!";
+                break;
+        }
+    }
+
     void OnDisable()
     {
         
@@ -26,7 +48,6 @@ public class NPCBisounoursBehavior : MonoBehaviour
         {
             _FollowPath.enabled = false;
         }
-        Debug.Log("falsed");
     }
 
     void OnEnable()
@@ -35,6 +56,5 @@ public class NPCBisounoursBehavior : MonoBehaviour
         {
             _FollowPath.enabled = true;
         }
-        Debug.Log("trued");
     }
 }
