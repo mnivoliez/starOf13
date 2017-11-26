@@ -33,9 +33,8 @@ public class Player : MonoBehaviour
                 Die();
             }
             if (Input.GetKeyDown(KeyCode.Space))
-            {
-                curHealth--;
-            }
+                hit();
+            Debug.Log(curHealth);
         }
     }
 
@@ -49,4 +48,10 @@ public class Player : MonoBehaviour
     {
         isAlive = false;
     }
+
+    public void hit()
+    {
+        curHealth--;
+    }
+
 }

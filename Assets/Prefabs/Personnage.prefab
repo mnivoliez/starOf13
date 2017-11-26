@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 20012047740805780}
   - component: {fileID: 124699705280284084}
   - component: {fileID: 81128629992347064}
+  - component: {fileID: 114135184390407036}
+  - component: {fileID: 114466252444973412}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -43,10 +45,11 @@ GameObject:
   - component: {fileID: 114859388542186168}
   - component: {fileID: 114584565841297614}
   - component: {fileID: 95292819204330812}
-  - component: {fileID: 114417650596079068}
+  - component: {fileID: 114445334200644948}
+  - component: {fileID: 114425399827389280}
   m_Layer: 0
   m_Name: Personnage
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,7 +185,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114417650596079068
+--- !u!114 &114135184390407036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266262915122644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec4c28c166da6284abd44ae8a1153f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  isAlive: 1
+--- !u!114 &114425399827389280
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -190,9 +206,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1867158943552214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d312819e85e1ac845b856f5908432d39, type: 3}
+  m_Script: {fileID: 11500000, guid: ec4c28c166da6284abd44ae8a1153f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 5
+  isAlive: 1
+--- !u!114 &114445334200644948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1867158943552214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6cb287657fc44b5cbec1ff79b25b48a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114466252444973412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266262915122644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d68ff062eaedce4db23430e41ca0f6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeartSprites:
+  - {fileID: 21300010, guid: 8aa86dbfc33fd724c86e78604b7865ce, type: 3}
+  - {fileID: 21300008, guid: 8aa86dbfc33fd724c86e78604b7865ce, type: 3}
+  - {fileID: 21300006, guid: 8aa86dbfc33fd724c86e78604b7865ce, type: 3}
+  - {fileID: 21300004, guid: 8aa86dbfc33fd724c86e78604b7865ce, type: 3}
+  - {fileID: 21300002, guid: 8aa86dbfc33fd724c86e78604b7865ce, type: 3}
+  - {fileID: 21300000, guid: 8aa86dbfc33fd724c86e78604b7865ce, type: 3}
+  HeartUi: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &114584565841297614
 MonoBehaviour:
   m_ObjectHideFlags: 1
