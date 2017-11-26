@@ -33,5 +33,4 @@ public class NPCBisounoursBehavior : MonoBehaviour {
 			break;
 		}
 	}
-
 }
