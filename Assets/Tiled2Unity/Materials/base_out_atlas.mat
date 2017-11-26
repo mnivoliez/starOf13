@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: base_out_atlas
-  m_Shader: {fileID: 4800000, guid: 5245ae2adfce6f04f91ba1b0be78d711, type: 3}
+  m_Shader: {fileID: 4800000, guid: 019e629a0f35a4446ac9fd14bd3c1ca7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a46d32150e377664dbc1ce647bd46514, type: 3}
+        m_Texture: {fileID: 2800000, guid: 01862014c64d14749a964243603011e5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
