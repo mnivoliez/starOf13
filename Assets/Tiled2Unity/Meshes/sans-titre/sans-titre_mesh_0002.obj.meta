@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 2d7587f3fe0d1b047958ab9fd4d73bf6
-timeCreated: 1511697910
+guid: 7b57ecb40fedd3b45b2bbe37b7c88b38
+timeCreated: 1511602963
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -12,12 +12,7 @@ ModelImporter:
     2300000: sans-titre_mesh_0002
     3300000: sans-titre_mesh_0002
     4300000: sans-titre_mesh_0002
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: sans-titre_mesh_0002Mat
-    second: {fileID: 2100000, guid: 9c34bfe3768f02a41ad669e873be36a4, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 0
     materialName: 0

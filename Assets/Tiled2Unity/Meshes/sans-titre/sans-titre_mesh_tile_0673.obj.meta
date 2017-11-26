@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5a32066dec32ece4085e080f2af589c9
-timeCreated: 1511697910
+guid: 2187b1e8359d9994f99394e67fade66b
+timeCreated: 1511609708
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -12,19 +12,14 @@ ModelImporter:
     2300000: sans-titre_mesh_tile_0673
     3300000: sans-titre_mesh_tile_0673
     4300000: sans-titre_mesh_tile_0673
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: sans-titre_mesh_tile_0673Mat
-    second: {fileID: 2100000, guid: aea626307100c1246971737c97097039, type: 2}
+  externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 0
   animations:
-    legacyGenerateAnimations: 4
+    legacyGenerateAnimations: 0
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
@@ -51,14 +46,14 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
-    importBlendShapes: 1
+    importBlendShapes: 0
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
-    keepQuads: 0
+    keepQuads: 1
     weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
@@ -68,7 +63,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 2
     normalCalculationMode: 4
   importAnimation: 1
   copyAvatar: 0

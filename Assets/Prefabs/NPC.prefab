@@ -22,6 +22,9 @@ GameObject:
   - component: {fileID: 212918617875336046}
   - component: {fileID: 61137175072978454}
   - component: {fileID: 50147208852569036}
+  - component: {fileID: 114590154141552966}
+  - component: {fileID: 114719498496434166}
+  - component: {fileID: 114495793061849094}
   - component: {fileID: 114071417698415822}
   - component: {fileID: 114413834741545230}
   - component: {fileID: 114481069984621742}
@@ -29,6 +32,7 @@ GameObject:
   - component: {fileID: 114001016637457156}
   - component: {fileID: 114333625182232628}
   - component: {fileID: 114139862481426308}
+  - component: {fileID: 114472939745882140}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -317,6 +321,20 @@ MonoBehaviour:
     tab3: 0
     tab4: 0
   objectiveFoldout: 1
+--- !u!114 &114472939745882140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111895878973586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2048606044, guid: e915c74e1c72d7449bcfaa622335b980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 1
+  ObjectiveAsSpeed: 0
+  Context: {fileID: 0}
 --- !u!114 &114481069984621742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -335,6 +353,41 @@ MonoBehaviour:
   rangeGizmo:
     Enabled: 0
     Color: {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
+--- !u!114 &114495793061849094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111895878973586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f48b2113e3748cd8f207d49d252b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114590154141552966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111895878973586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3168d0249911145cc80ebb12ed9a884d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Timer: 2
+  modulus: 40
+--- !u!114 &114719498496434166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111895878973586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1dc0bb6ce094bee86ca43449792229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212918617875336046
 SpriteRenderer:
   m_ObjectHideFlags: 1
