@@ -23,9 +23,13 @@ GameObject:
   - component: {fileID: 61137175072978454}
   - component: {fileID: 50147208852569036}
   - component: {fileID: 114071417698415822}
-  - component: {fileID: 114113045133848460}
-  - component: {fileID: 114599971354898458}
-  - component: {fileID: 114433483995299962}
+  - component: {fileID: 114362313260679264}
+  - component: {fileID: 114014592046948880}
+  - component: {fileID: 114018452893839050}
+  - component: {fileID: 114372053780985310}
+  - component: {fileID: 114780548319610344}
+  - component: {fileID: 114696830553009934}
+  - component: {fileID: 114638075555206778}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -40,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1111895878973586}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.557251, y: -2.6425977, z: -3.4453125}
+  m_LocalPosition: {x: 5.19, y: -0.4, z: -3.4453125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,7 +57,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1111895878973586}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -91,29 +95,91 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
+--- !u!114 &114014592046948880
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111895878973586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 336943168, guid: e915c74e1c72d7449bcfaa622335b980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  environmentFoldout: 0
+  SteeringPerceiver: {fileID: 0}
+  ObjectTag: Untagged
+  Range: -1
+  rangeGizmo:
+    Enabled: 0
+    Color: {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
+--- !u!114 &114018452893839050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111895878973586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1062805814, guid: e915c74e1c72d7449bcfaa622335b980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Order: 0
+  Label: SeekPlayer
+  initialized: 1
+  tabState:
+    tab0: 0
+    tab1: 0
+    tab2: 0
+    tab3: 0
+    tab4: 0
+  advancedInspector: 0
+  FilteredEnvironments:
+  - Player
+  GameObjects: []
+  velocityGizmo:
+    Enabled: 0
+    Color: {r: 0.5, g: 0.5, b: 1, a: 1}
+    DirectionScale: 1
+    PointSize: 0.2
+  steeringFoldout: 1
+  innerRadiusGizmo:
+    Enabled: 0
+    Color: {r: 0.59607846, g: 1, b: 0.5686275, a: 1}
+  outerRadiusGizmo:
+    Enabled: 0
+    Color: {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
+  radiusSteeringFoldout: 1
+  Seek:
+    TargetObjective: 0
+    MagnitudeMultiplier: 1
+    SensitivityOffset: 0
+    ValueWriting: 0
+    LayerBlending: 0
+    LayerNormalization: 0
+    ValueMapping: 2
+    UseSignificance: 1
+    UseSensorProjection: 1
+    VectorProjection: 0
+    PresetVelocity: 0
+    Prediction: 0
+    PredictionMagnitude: 0
+    InnerRadius: 0
+    OuterRadius: 20
+    RadiusMapping: 2
+    ForEachReceptor: 0
 --- !u!114 &114071417698415822
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1111895878973586}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d96450bde612d9458e0d0efdddafc1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114113045133848460
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1111895878973586}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eb659910cc6e18429ac827c34f5c321, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114433483995299962
+--- !u!114 &114362313260679264
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -121,10 +187,51 @@ MonoBehaviour:
   m_GameObject: {fileID: 1111895878973586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8276fa10a782e64fa822c1a4ddf1964, type: 3}
+  m_Script: {fileID: 1225004217, guid: e915c74e1c72d7449bcfaa622335b980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114599971354898458
+  UpdateFrequency: 20
+  Threaded: 0
+  SensorShared: 1
+  Sensor: {fileID: 11400000, guid: 57f5d3fe610634d2e8e6618e31b80a26, type: 2}
+  objectiveLabels:
+  - Player
+  - Obstacle
+  context:
+    minObjectives: 0001
+    normObjectives: 0101
+    constraintSolver:
+      Unlimited: 0
+      Epsilons:
+      - 0
+      - 0.4
+  selfObject: {fileID: 0}
+  indicatorGizmo:
+    Enabled: 1
+    Wireframe: 0
+    ShowReceptors: 0
+    ShowConstraints: 0
+    DrawDoubleSided: 1
+    ResolutionThreshold: 32
+    CustomScale: 1
+    Spacing: 1
+    SolutionColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    InterpolatedSolutionColor: {r: 1, g: 0.6, b: 0.011764706, a: 1}
+    ConstraintColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    ReceptorColor: {r: 0.7058824, g: 0.7058824, b: 0.7058824, a: 1}
+    LineColor: {r: 0.7058824, g: 0.7058824, b: 0.7058824, a: 1}
+    ObjectiveColors:
+    - {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
+    - {r: 1, g: 0.23529412, b: 0.23529412, a: 1}
+    - {r: 0.39215687, g: 0.62352943, b: 0.8392157, a: 1}
+  tabState:
+    tab0: 0
+    tab1: 0
+    tab2: 0
+    tab3: 0
+    tab4: 0
+  objectiveFoldout: 1
+--- !u!114 &114372053780985310
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -132,9 +239,117 @@ MonoBehaviour:
   m_GameObject: {fileID: 1111895878973586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c6c00998809614ea9b499f1b465718, type: 3}
+  m_Script: {fileID: -1062805814, guid: e915c74e1c72d7449bcfaa622335b980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Order: 0
+  Label: SeekObstable
+  initialized: 1
+  tabState:
+    tab0: 0
+    tab1: 0
+    tab2: 0
+    tab3: 0
+    tab4: 0
+  advancedInspector: 0
+  FilteredEnvironments:
+  - Obstacle
+  GameObjects: []
+  velocityGizmo:
+    Enabled: 0
+    Color: {r: 0.5, g: 0.5, b: 1, a: 1}
+    DirectionScale: 1
+    PointSize: 0.2
+  steeringFoldout: 1
+  innerRadiusGizmo:
+    Enabled: 0
+    Color: {r: 0.59607846, g: 1, b: 0.5686275, a: 1}
+  outerRadiusGizmo:
+    Enabled: 0
+    Color: {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
+  radiusSteeringFoldout: 1
+  Seek:
+    TargetObjective: 1
+    MagnitudeMultiplier: 1
+    SensitivityOffset: 0
+    ValueWriting: 0
+    LayerBlending: 0
+    LayerNormalization: 0
+    ValueMapping: 2
+    UseSignificance: 1
+    UseSensorProjection: 1
+    VectorProjection: 0
+    PresetVelocity: 0
+    Prediction: 0
+    PredictionMagnitude: 0
+    InnerRadius: 0
+    OuterRadius: 20
+    RadiusMapping: 2
+    ForEachReceptor: 0
+--- !u!114 &114638075555206778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111895878973586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2048606044, guid: e915c74e1c72d7449bcfaa622335b980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 1
+  ObjectiveAsSpeed: 0
+  Context: {fileID: 0}
+--- !u!114 &114696830553009934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111895878973586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -561398845, guid: e915c74e1c72d7449bcfaa622335b980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Order: 2000
+  Label: 
+  initialized: 1
+  tabState:
+    tab0: 0
+    tab1: 0
+    tab2: 0
+    tab3: 0
+    tab4: 0
+  advancedInspector: 0
+  PlanarInterpolation:
+    TargetObjective: 0
+    Constraint: 1
+--- !u!114 &114780548319610344
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111895878973586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1187903073, guid: e915c74e1c72d7449bcfaa622335b980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Order: 1000
+  Label: 
+  initialized: 1
+  tabState:
+    tab0: 0
+    tab1: 0
+    tab2: 0
+    tab3: 0
+    tab4: 0
+  advancedInspector: 0
+  Stabilization:
+    TargetObjective: 0
+    AngleMapping: 2
+    MaxIncrease: 0.2
+    MaxAngle: 45
 --- !u!212 &212918617875336046
 SpriteRenderer:
   m_ObjectHideFlags: 1
