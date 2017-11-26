@@ -17,7 +17,6 @@ public class HUD : MonoBehaviour {
 
     void Update ()
     {
-        Debug.Log(HeartSprites.Length);
         HeartUi.sprite = HeartSprites[player.getCurrentHealth()];
     }
 }

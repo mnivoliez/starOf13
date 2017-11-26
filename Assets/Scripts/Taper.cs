@@ -8,25 +8,21 @@ public class Taper : MonoBehaviour
     BoxCollider2D hit = null;
     float knockback = 2f;
 
-    // Use this for initialization
-    void Start()
-    {
+	// Use this for initialization
+	void Start () {
 
-    }
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (!hitting)
-        {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                GetComponent<Animator>().SetBool("isHitting", true);
+	// Update is called once per frame
+	void Update () {
+		if (!hitting) {
+			if (Input.GetButtonDown ("Fire1")) {
+				GetComponent<Animator> ().SetBool ("isHitting", true);
 
-                Vector2 charSize = GetComponent<Renderer>().bounds.size;
+				Vector2 charSize = GetComponent<Renderer> ().bounds.size;
 
-                hit = gameObject.AddComponent<BoxCollider2D>() as BoxCollider2D;
-                hit.isTrigger = true;
+				hit = gameObject.AddComponent<BoxCollider2D> () as BoxCollider2D;
+				hit.isTrigger = true;
 
                 switch (GetComponent<MDirection>().Get())
                 {
@@ -50,19 +46,16 @@ public class Taper : MonoBehaviour
                         break;
                 }
 
-                hitting = true;
-            }
-        }
-        else if (hit != null)
-        {
-            Destroy(hit);
-            hitting = false;
-            GetComponent<Animator>().SetBool("isHitting", false);
-        }
-    }
+				hitting = true;
+			}
+		} else if (hit != null) {
+			Destroy (hit);
+			hitting = false;
+			GetComponent<Animator> ().SetBool ("isHitting", false);
+		}
+	}
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
+	void OnTriggerEnter2D (Collider2D other) {
 
         if (other.GetComponent<Hittable>() as Hittable != null && hitting)
         {
