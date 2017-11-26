@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 
-public class AudioScript : MonoBehaviour {
+public class AudioScript : MonoBehaviour, IPhaseDriven {
 
 	public Sound[] sounds;
 
@@ -46,4 +46,21 @@ public class AudioScript : MonoBehaviour {
 		}
 		s.source.Stop ();
 	}
+
+	// Switch music
+	#region IPhaseDriven implementation
+	public void EnterPhase (Phase phase)
+	{
+		switch (phase) {
+		case Phase.BISOUNOURS:
+			Stop ("Music_V13");
+			Play ("Music_Normal");
+			break;
+		case Phase.FRIDAY_13:
+			Stop ("Music_Normal");
+			Play ("Music_V13");
+			break;
+		}
+	}
+	#endregion
 }
