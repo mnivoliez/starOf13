@@ -21,6 +21,8 @@ public class Taper : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1"))
             {
+                GetComponent<Animator>().SetBool("isHitting", true);
+
                 Vector2 charSize = GetComponent<Renderer>().bounds.size;
 
                 hit = gameObject.AddComponent<BoxCollider2D>() as BoxCollider2D;
@@ -55,6 +57,7 @@ public class Taper : MonoBehaviour
         {
             Destroy(hit);
             hitting = false;
+            GetComponent<Animator>().SetBool("isHitting", false);
         }
     }
 

@@ -16,22 +16,73 @@ public class Deplacement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		inputX = Input.GetAxisRaw ("Horizontal");
-		inputY = Input.GetAxisRaw ("Vertical");
-		mvt = new Vector2 (speed * inputX, speed * inputY);
-	}
 
-	void FixedUpdate () {
-		GetComponent<Rigidbody2D> ().velocity = mvt;
-		if (inputX == 0 && inputY > 0) {
-			GetComponent<MDirection> ().Set (Direction.TOP);
-		} else if (inputX > 0 && inputY == 0) {
-			GetComponent<MDirection> ().Set (Direction.RIGHT);
-		} else if (inputX == 0 && inputY < 0) {
-			GetComponent<MDirection> ().Set (Direction.BOTTOM);
-		} else if (inputX < 0 && inputY == 0) {
-			GetComponent<MDirection> ().Set (Direction.LEFT);
+    }
 
-		}
-	}
+    void FixedUpdate()
+    {
+        inputX = Input.GetAxisRaw("Horizontal");
+        inputY = Input.GetAxisRaw("Vertical");
+        mvt = new Vector2(speed * inputX, speed * inputY);
+        this.GetComponent<Rigidbody2D>().velocity = mvt;
+        //transform.Translate(mvt.x, mvt.y, 0);
+        if (inputX == 0 && inputY > 0)
+        {
+            GetComponent<MDirection>().Set(Direction.TOP);
+        }
+        else if (inputX > 0 && inputY > 0)
+        {
+            GetComponent<MDirection>().Set(Direction.TOP);
+        }
+        else if (inputX > 0 && inputY == 0)
+        {
+            GetComponent<MDirection>().Set(Direction.RIGHT);
+        }
+        else if (inputX > 0 && inputY < 0)
+        {
+            GetComponent<MDirection>().Set(Direction.BOTTOM);
+        }
+        else if (inputX == 0 && inputY < 0)
+        {
+            GetComponent<MDirection>().Set(Direction.BOTTOM);
+        }
+        else if (inputX < 0 && inputY < 0)
+        {
+            GetComponent<MDirection>().Set(Direction.BOTTOM);
+        }
+        else if (inputX < 0 && inputY == 0)
+        {
+            GetComponent<MDirection>().Set(Direction.LEFT);
+        }
+        else if (inputX < 0 && inputY > 0)
+        {
+            GetComponent<MDirection>().Set(Direction.TOP);
+        }
+
+        if (inputX > 0)
+        {
+            GetComponent<Animator>().SetInteger("X", 1);
+        }
+        else if (inputX < 0)
+        {
+            GetComponent<Animator>().SetInteger("X", -1);
+        }
+        else
+        {
+            GetComponent<Animator>().SetInteger("X", 0);
+        }
+
+        if (inputY > 0)
+        {
+            GetComponent<Animator>().SetInteger("Y", 1);
+        }
+        else if (inputY < 0)
+        {
+            GetComponent<Animator>().SetInteger("Y", -1);
+        }
+        else
+        {
+            GetComponent<Animator>().SetInteger("Y", 0);
+        }
+    }
 }
