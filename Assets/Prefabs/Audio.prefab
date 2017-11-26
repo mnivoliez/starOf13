@@ -1,0 +1,183 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1538520740383548}
+  m_IsPrefabParent: 1
+--- !u!1 &1538520740383548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4712564635698892}
+  - component: {fileID: 82826000115090074}
+  - component: {fileID: 114788849616833606}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4712564635698892
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1538520740383548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.14999998, y: -0.14999998, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &82826000115090074
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1538520740383548}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.495
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &114788849616833606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1538520740383548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132601c96190ea347871542e1fd5eb84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Music_Normal
+    clip: {fileID: 8300000, guid: b8bb6a5cb754d774d9e4186e7dab929c, type: 3}
+    volume: 0.333
+    pitch: 1.07
+    loop: 1
+    source: {fileID: 0}
+  - name: Music_V13
+    clip: {fileID: 8300000, guid: 678d21754c7d1124bb4dfc2328a5fee7, type: 3}
+    volume: 0.433
+    pitch: 1.24
+    loop: 1
+    source: {fileID: 0}
+  - name: girl_0
+    clip: {fileID: 8300000, guid: 7d1abbdf0dcf31c49ab1fe0582608c6c, type: 3}
+    volume: 0.818
+    pitch: 1.24
+    loop: 0
+    source: {fileID: 0}
+  - name: girl_1
+    clip: {fileID: 8300000, guid: 90377fec68b93d5489ddda5882338494, type: 3}
+    volume: 0.818
+    pitch: 1.24
+    loop: 0
+    source: {fileID: 0}
+  - name: boy_0
+    clip: {fileID: 8300000, guid: a83d8ec2c5461544c8cc7108516c45a3, type: 3}
+    volume: 0.818
+    pitch: 1.24
+    loop: 0
+    source: {fileID: 0}
+  - name: boy_1
+    clip: {fileID: 8300000, guid: 2760bc394888e4e4290c4e9a8b68de6c, type: 3}
+    volume: 0.818
+    pitch: 1.24
+    loop: 0
+    source: {fileID: 0}
+  - name: attack_boy
+    clip: {fileID: 8300000, guid: a9f4691f996526f42a98dda660446522, type: 3}
+    volume: 0.8
+    pitch: 1.24
+    loop: 0
+    source: {fileID: 0}
+  - name: game_over
+    clip: {fileID: 8300000, guid: c2ceedb1f6faf7b40a8652cdddccde06, type: 3}
+    volume: 0.596
+    pitch: 1.24
+    loop: 0
+    source: {fileID: 0}
